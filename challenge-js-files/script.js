@@ -110,7 +110,7 @@ var x = myChart.addCategoryAxis("x", ["année", "pays"]);
 var y = myChart.addMeasureAxis("y", "data");
 y.ticks = 20;
 myChart.addSeries("pays", dimple.plot.bar);
-var myLegend = myChart.addLegend(10, 10, "100%", 200);
+var myLegend = myChart.addLegend(10, 10, "100%", 200, "Right");
 myChart.draw();
 
 // This is a critical step.  By doing this we orphan the legend. This
@@ -123,7 +123,7 @@ myChart.legends = [];
 // object to split it onto 2 lines.  This technique works with any
 // number of lines, it isn't dimple specific.
 svg.selectAll("title_text")
-  .data(["Clickez sur la légende pour", "montrer/cacher les pays:"])
+  .data([""])
   .enter()
   .append("text")
   .attr("x", 499)
